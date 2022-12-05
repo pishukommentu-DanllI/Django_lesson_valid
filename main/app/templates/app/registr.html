@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" action="weclom" novalidate>
+        {% csrf_token %}
+        {{form.Name.label}}{{form.Name}}<br>
+        {{form.Email.label}}{{form.Email}}<br>
+        {{form.Password.label}}{{form.Password}}<br><br>
+
+        <button type="submit">Press to me</button>
+    </form>
+    <br><br><br>
+    <a href="{% url 'login' %}">login</a>
+</body>
+</html>
