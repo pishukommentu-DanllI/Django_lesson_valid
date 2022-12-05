@@ -20,6 +20,6 @@ class Login(forms.Form):
         attrs={}
     ))
 
-    Email = forms.EmailField(label='Email', widget=forms.EmailInput(
+    Name = forms.CharField(label='User Name' ,widget=forms.TextInput(
         attrs={}
     ))

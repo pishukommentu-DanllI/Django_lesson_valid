@@ -17,7 +17,7 @@ def weclom(reqeust):
             return render(reqeust, 'app/welcome.html', {'data': [(i, form.cleaned_data[i]) for i in form.cleaned_data.keys()], 'text': f'{form.cleaned_data["Name"]} , поздравляю с регистрацией!'})
         else:
             form = Login(reqeust.POST)
-            if form.is_valid():
+            if form.is_valid() and form.cleaned_data['Name'] == 'User1' and form.cleaned_data['Password'] == '12345678':
                 return render(reqeust, 'app/welcome.html', {'data': [(i, form.cleaned_data[i]) for i in form.cleaned_data.keys()], 'text': f'Поздравляю с успешным входом'})
 
             else:
